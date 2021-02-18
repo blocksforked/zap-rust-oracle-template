@@ -2,7 +2,7 @@
 
 
 use serde_json::Value;
-
+use substring::Substring;
 
 async fn make_get(
     url: &String,
@@ -10,6 +10,22 @@ async fn make_get(
 ) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
     let echo_json: serde_json::Value = reqwest::Client::new()
         .get(url)
+        .send()
+        .await?
+        .json()
+        .await?;
+
+    println!("{:#?}", &echo_json);
+
+    Ok(echo_json)
+}
+async fn make_post(
+    url: &String,
+    body: Value,
+) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    let echo_json: serde_json::Value = reqwest::Client::new()
+        .post(url)
+        .json(&body)
         .send()
         .await?
         .json()
@@ -51,9 +67,11 @@ pub fn processEndpointParams(raw:String)->Vec<String>{
 }
 
 pub async fn fetchAndProcessQuery(raw_params:String,query:String)->String{
-    let path=processEndpointParams(raw_params);
+    let raw_path=processEndpointParams(raw_params);
     let pointer_path=buildPath(raw_path);
-    let json_result=await make_get(&query);
-    json_result.point(pointer_path).unwrap()
+    println!("{:?}","QUERY");
+    println!("{:?}",&query);
+    let json_result=make_get(&query).await;
+    json_result.unwrap().pointer(&pointer_path).unwrap().to_string()
 
 }

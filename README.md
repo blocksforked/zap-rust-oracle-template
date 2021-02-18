@@ -1,9 +1,9 @@
-# zap-rust-oracle-template
+## zap-rust-oracle-template
 A template for create a Oracle on the Zap platform written in Rust
 
-Web3 Server
 
-Usage
+
+#Usage
     Configuration:
         Add a config entry for each event being watched
         create abi file for abi_path
@@ -39,6 +39,6 @@ Usage
         To start test server use npm run start-websocket in testserver folder.
 
 Running with docker :
-    docker run -it --net=host rust-web3
+    docker run -it --net=host rust-web3 $CONFIG_PATH $WEB3_PROVIDER $WEB_SOCKETPORT
 Running with Cargo:
-    cargo run --release
+    cargo run --release $CONFIG_PATH $WEB3_PROVIDER $WEB_SOCKETPORT

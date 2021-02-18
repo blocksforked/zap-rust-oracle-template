@@ -1,0 +1,30 @@
+{
+	"title": "",
+	"public_key": "",
+	"NODE_URL": "ws://127.0.0.1:8545",
+	"mnemonic": "",
+	"STATUS_URL": "",
+	"EndpointSchema": {
+		"name": "BTCprice",
+		"curve": [
+			2,
+			5000000000000000000,
+			2000000000000000000,
+			1000,
+			2,
+			0,
+			3000000000000000000,
+			1000000000000000000
+		],
+		"broker": "",
+		"md": "Provide BTC price",
+		"queryList": [
+			{
+				"query": "BTC",
+				"params": [],
+				"dynamic": false,
+				"responseType": "[int]"
+			}
+		]
+	}
+}

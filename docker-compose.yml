@@ -1,0 +1,5 @@
+version: '3.3'
+services:
+    rust-web3:
+        network_mode: host
+        image: rust-web3

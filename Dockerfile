@@ -17,7 +17,11 @@ RUN cargo build --release
 
 FROM debian:buster-slim
 ARG APP=/usr/src/app
-COPY ./config.json ./${APP}/config.json
+
+COPY ./kovan_config.json ./${APP}/kovan_config.json
+COPY ./mainnet_config.json ./${APP}/mainnet_config.json
+COPY ./devnet_config.json ./${APP}/devnet_config.json
+
 RUN apt-get update \
     && apt-get install -y ca-certificates tzdata \
     && rm -rf /var/lib/apt/lists/*
@@ -38,4 +42,4 @@ RUN chown -R $APP_USER:$APP_USER ${APP}
 USER $APP_USER
 WORKDIR ${APP}
 
-CMD ["./zap-rust-oracle-template"]
+ENTRYPOINT  ["./zap-rust-oracle-template"]

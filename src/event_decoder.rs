@@ -10,8 +10,8 @@ use tiny_keccak::Keccak;
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 pub struct event_value {
-    name: String,
-    value: String,
+   pub name: String,
+   pub value: String,
 }
 impl event_value {
     fn new(_name: String, _value: String) -> event_value {

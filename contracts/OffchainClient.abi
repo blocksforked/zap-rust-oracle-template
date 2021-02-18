@@ -1,0 +1,228 @@
+ [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "response",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "response1",
+          "type": "string"
+        }
+      ],
+      "name": "Callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelQuery",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "response1",
+          "type": "string"
+        }
+      ],
+      "name": "callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "oracleAddr",
+          "type": "address"
+        },
+        {
+          "name": "query",
+          "type": "string"
+        },
+        {
+          "name": "specifier",
+          "type": "bytes32"
+        },
+        {
+          "name": "params",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "testQuery",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "response1",
+          "type": "string"
+        },
+        {
+          "name": "response2",
+          "type": "string"
+        }
+      ],
+      "name": "callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        {
+          "name": "dispatchAddress",
+          "type": "address"
+        },
+        {
+          "name": "bondageAddress",
+          "type": "address"
+        },
+        {
+          "name": "registryAddress",
+          "type": "address"
+        },
+        {
+          "name": "oracle",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "oracle",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "query",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "MadeQuery",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "response1",
+          "type": "string"
+        }
+      ],
+      "name": "Result1",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "response1",
+          "type": "bytes32"
+        }
+      ],
+      "name": "Result1",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "response1",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "response2",
+          "type": "string"
+        }
+      ],
+      "name": "Result2",
+      "type": "event"
+    }
+  ]

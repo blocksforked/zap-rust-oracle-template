@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::BufReader;
 use std::io::Error;
 use std::path::Path;
-use web3::types::{H160, H256};
+use web3::types::{H160, H256,U256};
 
 pub struct event_config {
     pub name: String,
@@ -12,6 +12,79 @@ pub struct event_config {
     pub abi_path: String,
     pub response_type: String,
     pub response_data: String,
+}
+pub struct oracleConfig{
+    pub title: String,
+    pub public_key:String,
+    pub NODE_URL:String,
+    pub STATUS_URL:String,
+    pub EndpointSchema:endpointParams,
+
+}
+pub struct endpointParams{
+    pub name:String,
+    pub curve:Vec<u128>,
+    pub broker:String,
+    pub md:String,
+    pub queries:Vec<queryConfig>
+}
+pub struct queryConfig{
+    pub query:String,
+    pub params:Vec<String>,
+    pub dynamic:bool,
+    pub responseType:String,
+}
+impl  oracleConfig{
+    fn new(
+        _title: String,
+        _public_key: String,
+        _NODE_URL:String,
+        _STATUS_URL: String,
+       _EndpointSchema:endpointParams,
+    )->oracleConfig{
+        oracleConfig{
+        title:_title,
+        public_key:_public_key,
+        NODE_URL:_NODE_URL,
+        STATUS_URL:_STATUS_URL,
+        EndpointSchema:_EndpointSchema
+        }
+    }
+}
+impl queryConfig{
+    fn new(
+        _query: String,
+        _params: Vec<String>,
+        _dynamic:bool,
+        _responseType: String,
+       
+    ) -> queryConfig{
+        queryConfig{
+            query: _query,
+            params:_params,
+            dynamic: _dynamic,
+            responseType: _responseType,            
+        }
+    }
+}
+impl endpointParams{
+    fn new(
+        _name: String,
+        _curve: Vec<u128>,
+        _broker:String,
+        _md: String,
+        _queries:Vec<queryConfig>
+       
+    ) ->  endpointParams{
+        endpointParams {
+            name: _name,
+            curve:_curve,
+            broker: _broker,
+            md: _md,   
+            queries:_queries         
+        }
+    }
+
 }
 impl event_config {
     fn new(

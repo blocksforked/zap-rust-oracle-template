@@ -32,6 +32,7 @@ extern crate dotenv_codegen;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     dotenv().ok();
+    
     let args: Vec<String> = env::args().collect();
 
     println!("{:?}", &args);
@@ -73,8 +74,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         let _log = log;
         let response_data:Vec<event_value> =
         process_log(_log.unwrap(), &event_mapping).await;
-
-        if(response_data[3].value==endpoint){
+        println!("{:?}",&response_data[4].value);
+        if(response_data[4].value==endpoint){
             let provider_copy  = Arc::clone(&provider_arc);        
            
             tokio::spawn(async move {
